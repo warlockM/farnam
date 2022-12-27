@@ -4,3 +4,6 @@ djangorestframework==3.14.0
 pytz==2022.7
 sqlparse==0.4.3
 tzdata==2022.7
+authlib ~= 1.0
+requests ~= 2.27
+python-dotenv ~= 0.19

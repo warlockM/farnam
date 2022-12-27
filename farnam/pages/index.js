@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Footer from '../components/footer';
 import Navbar from '../components/navbar'
+import Dashboard from './dashboard';
 
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         <span class="block"></span> which you can use to make decisions in the
         future based on your previous decisions.
       </p>
+      <Dashboard />
       <Footer />
     </div>
   );
