@@ -14,7 +14,7 @@ from pathlib import Path
 # 📁 webappexample/settings.py -----
 
 import os
-# from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,9 +143,9 @@ CORS_ORIGIN_WHITELIST = (
 # 📁 webappexample/settings.py -----
 
 # Load environment definition file
-# ENV_FILE = find_dotenv()
-# if ENV_FILE:
-#     load_dotenv(ENV_FILE)
+ENV_FILE = find_dotenv()
+if ENV_FILE:
+    load_dotenv(ENV_FILE)
 
 
 # Load Auth0 application settings into memory

@@ -36,7 +36,7 @@ def login(request):
 def callback(request):
     token = oauth.auth0.authorize_access_token(request)
     request.session["user"] = token
-    return redirect(request.build_absolute_uri(reverse("index")))
+    return redirect("http://localhost:3000/")
 
 # 👆 We're continuing from the steps above. Append this to your webappexample/views.py file.
 
@@ -47,7 +47,7 @@ def logout(request):
         f"https://{settings.AUTH0_DOMAIN}/v2/logout?"
         + urlencode(
             {
-                "returnTo": request.build_absolute_uri(reverse("index")),
+                "returnTo": "http://localhost:3000",
                 "client_id": settings.AUTH0_CLIENT_ID,
             },
             quote_via=quote_plus,
