@@ -5,6 +5,7 @@ from . models import *
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from localStoragePy import localStoragePy
 # 📁 webappexample/views.py -----
 
 import json
@@ -14,6 +15,8 @@ from django.shortcuts import redirect, render, redirect
 from django.urls import reverse
 from urllib.parse import quote_plus, urlencode
 
+
+localStorage = localStoragePy('ledger', 'sqlite')
 oauth = OAuth()
 
 oauth.register(
@@ -37,6 +40,7 @@ def login(request):
 def callback(request):
     token = oauth.auth0.authorize_access_token(request)
     request.session["user"] = token
+    #localStorage.setItem("token", token)
     return redirect("http://localhost:3000/")
 
 # 👆 We're continuing from the steps above. Append this to your webappexample/views.py file.
